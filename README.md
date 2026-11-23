@@ -2,9 +2,9 @@
 
 **Founder & Lead Engineer, [Offset Technologies](https://offsettechs.com)** · Arusha, Tanzania · since 2016
 
-I design and build transactional business systems for East African retail, pharmacy and safari operators: append-only stock ledgers, idempotent offline sync, multi-tenant isolation and GPS telemetry pipelines. All of it runs on commodity cPanel hosting with no Node runtime, behind connections that drop several times a day.
+I design and build transactional business systems for East African retail, workshop and safari operators: append-only stock ledgers, idempotent offline sync, multi-tenant isolation and GPS telemetry pipelines. All of it runs on commodity cPanel hosting with no Node runtime, behind connections that drop several times a day.
 
-`TypeScript` `Next.js 15/16` `React 19` `PHP 8 (strict_types)` `MySQL/MariaDB` `Prisma` `IndexedDB` `Service Workers` `Web Bluetooth`
+`TypeScript` `Next.js 15/16` `React 19` `PHP 8 (strict_types)` `MySQL/MariaDB` `IndexedDB` `Service Workers` `Web Bluetooth`
 
 ---
 
@@ -34,7 +34,7 @@ flowchart LR
   API <--> EXT
 ```
 
-One pattern across five products: a static front end served from the web root, a single PHP endpoint that dispatches `?action=` to `act_*` handlers, and MySQL as the only state. Deploys are a zip upload. No build step or process manager on the server.
+One pattern across four products: a static front end served from the web root, a single PHP endpoint that dispatches `?action=` to `act_*` handlers, and MySQL as the only state. Deploys are a zip upload. No build step or process manager on the server.
 
 ---
 
@@ -42,9 +42,8 @@ One pattern across five products: a static front end served from the web root, a
 
 | System | Domain | Scale of the codebase | Stack |
 |---|---|---|---|
-| **Msafara** | Safari fleet & operations, multi-tenant SaaS | 59 tables · 97 automated checks (11 security) | Vanilla JS · PHP 8.1 · MariaDB · Leaflet |
 | **[Rahisi Auto](https://rahisiautocenter.online)** | Spare-parts POS, inventory, workshop | 35 tables · 193 end-to-end API tests | Next.js 15 · TS · PHP 8 · MySQL |
-| **[DawaFlow](https://dawaflowtz.online)** | Pharmacy ERP, multi-branch SaaS | 40 Prisma models | Next.js · Prisma · SQLite · Node 24 |
+| **Msafara** | Safari fleet & operations, multi-tenant SaaS | 59 tables · 97 automated checks (11 security) | Vanilla JS · PHP 8.1 · MariaDB · Leaflet |
 | **Zana** | Hardware retail, rentable multi-tenant | Same core stack as Rahisi | Next.js 15 · TS · PHP 8 · MySQL |
 | **Business Manager** | SME sales & CRM, deployed for [Shamba Lulu](https://shambalulu.online) and [Naturaw](https://naturawskinco.store) | Base system customised per client | Next.js 16 · Radix UI · PHP 8 · MySQL |
 
@@ -80,10 +79,10 @@ One pattern across five products: a static front end served from the web root, a
 |---|---|
 | Languages | TypeScript, PHP 8 (strict types), SQL, JavaScript |
 | Front end | Next.js (static export), React 19, Tailwind CSS 4, Radix UI, Leaflet, Chart.js, ApexCharts |
-| Back end & data | PHP action-router APIs over PDO, MySQL/MariaDB (InnoDB), Prisma, SQLite |
+| Back end & data | PHP action-router APIs over PDO, MySQL/MariaDB (InnoDB) |
 | Browser platform | Service Workers, IndexedDB, Web Bluetooth, PWA manifests |
-| Ops | cPanel/LiteSpeed, Let's Encrypt (acme.sh), cron, PowerShell packaging and SSH deploys, nightly compressed dumps with rotation |
-| Integrations | Africa's Talking SMS, M-Pesa / Mixx / Airtel / HaloPesa reconciliation, WhatsApp Cloud API, Telegram Bot API (webhooks), Wialon |
+| Ops | cPanel/LiteSpeed, Let's Encrypt, cron, PowerShell packaging scripts, nightly compressed dumps with rotation |
+| Integrations | Africa's Talking SMS, M-Pesa / Mixx / Airtel / HaloPesa payment capture, WhatsApp Cloud API, Telegram Bot API (webhooks), Wialon |
 
 ---
 
